@@ -24,6 +24,7 @@ assert(
   idle.MAX_TIMEOUT_SECONDS * 1000 <= 2147483647,
   'idle timeout ceiling stays inside a signed 32-bit millisecond interval'
 )
+assertEqual(idle.MAX_TIMEOUT_SECONDS, 2147483, 'idle timeout ceiling is the largest whole second that fits')
 
 assertDeepEqual(idle.eventParts({ data: 'a,b,c' }, 2), ['a', 'b', 'c'], 'idle parses raw event data')
 assertDeepEqual(
